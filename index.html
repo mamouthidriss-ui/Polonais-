@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Polonais pas à pas</title>
+<meta name="description" content="Apprendre le polonais de zéro : alphabet, prononciation, syllabes, grammaire et dictées, jusqu’au niveau B2.">
+<meta name="theme-color" content="#C42B3F">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📚%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F5F7;--surface:#fff;--ink:#17232F;--mute:#56667A;--line:#D5DDE4;--red:#C42B3F;--ok:#23704F;--okbg:#E1F2EA;--badbg:#FBE4E7;--warn:#FFF3D6;
+--head:"Bricolage Grotesque",system-ui,sans-serif;--body:"Source Serif 4",Georgia,serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1720;--surface:#18232F;--ink:#E8EEF3;--mute:#9AABBB;--line:#2B3A49;--red:#F0627A;--ok:#5CC99A;--okbg:#17372B;--badbg:#44202A;--warn:#3D3418;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0F1720;--surface:#18232F;--ink:#E8EEF3;--mute:#9AABBB;--line:#2B3A49;--red:#F0627A;--ok:#5CC99A;--okbg:#17372B;--badbg:#44202A;--warn:#3D3418;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.65 var(--body)}
+.wrap{max-width:640px;margin:0 auto;padding:20px 18px 60px}
+h1,h2,h3{font-family:var(--head);line-height:1.2;margin:0}
+h1{font-size:2rem}h2{font-size:1.5rem;margin-bottom:8px}h3{font-size:1.1rem;margin:28px 0 10px}
+p{margin:0 0 12px}
+.mute{color:var(--mute);font-size:.95rem}
+.bar{height:8px;background:var(--line);border-radius:4px;overflow:hidden;margin:14px 0 4px}
+.bar i{display:block;height:100%;background:var(--red);transition:width .4s}
+.level{font-family:var(--head);font-weight:700;margin:30px 0 4px}
+.mod{display:flex;gap:12px;align-items:center;width:100%;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;margin-top:8px;color:inherit;text-decoration:none}
+.mod:hover{border-color:var(--red)}
+.mod b{font-family:var(--head);font-weight:500;display:block}
+.dot{flex:none;width:26px;height:26px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:.85rem;font-family:var(--head)}
+.done .dot{background:var(--ok);border-color:var(--ok);color:#fff}
+.soon{opacity:.75;border-style:dashed}
+.back{display:inline-block;margin-bottom:16px;color:var(--mute);text-decoration:none;font-family:var(--head)}
+.vocab{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.row{display:flex;align-items:center;gap:8px;padding:10px 14px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.w{flex:1;min-width:0}
+.pl{font-family:var(--head);font-weight:700;font-size:1.1rem}
+.ph{font-style:italic;color:var(--red);font-size:.95rem}
+.fr{color:var(--mute);font-size:.9rem;line-height:1.3}
+.bt{flex:none;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;font-size:.95rem;display:grid;place-items:center;text-decoration:none}
+.ch{min-width:44px;height:44px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:inherit;font:700 1.1rem var(--head);cursor:pointer;margin:3px}.ch.on{background:var(--red);color:#fff;border-color:var(--red)}
+.dc{font:inherit;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:inherit;width:150px;margin:6px 4px}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.how{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:.92rem;line-height:1.5}
+.warn{background:var(--warn);border-radius:8px;padding:10px 12px;margin-top:10px;font-size:.9rem;display:none}
+.tip{border-left:4px solid var(--red);padding:4px 0 4px 14px;margin-top:22px}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:12px}
+.q p{font-weight:600}
+.opt{display:block;width:100%;text-align:left;margin-top:8px;padding:10px 12px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:inherit;font:inherit;cursor:pointer}
+.opt.good{background:var(--okbg);border-color:var(--ok)}
+.opt.bad{background:var(--badbg);border-color:var(--red)}
+.btn{display:inline-block;background:var(--red);color:#fff;border:0;border-radius:8px;padding:12px 18px;font-family:var(--head);font-weight:700;text-decoration:none;cursor:pointer;font-size:1rem}
+.play{display:inline-flex;gap:8px;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 14px;color:inherit;font:inherit;cursor:pointer;margin-bottom:4px}
+.result{margin-top:16px}
+.reset{background:none;border:0;color:var(--mute);text-decoration:underline;cursor:pointer;font:inherit;margin-top:36px;padding:0}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<script>
+var L=[
+{id:"a1",t:"L’alphabet complet et ses sons",i:"Voici les 32 lettres du polonais avec leur son. Apprends-les comme à l’école primaire : une lettre, un son, un mot exemple. Appuie sur une lettre pour entendre son nom, puis son mot exemple. Une consonne seule ne se prononce pas : on l’entend vraiment dans le mot.",
+g:["<b>32 lettres.</b> 9 voyelles (a, ą, e, ę, i, o, ó, u, y) et 23 consonnes. Les lettres q, v et x n’existent que dans les mots étrangers.","<b>Un son par lettre.</b> Chaque lettre se lit toujours de la même façon. Il n’y a aucune lettre muette.","<b>Les digraphes.</b> Certains sons s’écrivent avec deux lettres : ch, cz, dz, dź, dż, rz, sz. Ils comptent comme un seul son et sont listés en bas de la liste.","<b>Méthode.</b> Écoute le mot exemple, lis la ligne rouge à voix haute, puis répète 3 fois. Fais 8 lettres par jour."],
+v:[["A a","a de « papa » · mama","a","mama"],["Ą ą","on nasal de « bon » · mąka","on","mąka"],["B b","b de « bébé » · brat","b","brat"],["C c","ts de « tsar » · co (quoi)","ts","co"],["Ć ć","tch doux, mouillé · ćma","tch","ćma"],["D d","d de « dos » · dom","d","dom"],["E e","è de « mère » · ten (ce)","è","ten"],["Ę ę","in nasal (« è » en fin de mot) · ręka","in","ręka"],["F f","f de « fou » · film","f","film"],["G g","g de « gare », toujours dur · góra","g","góra"],["H h","h aspiré, comme le j espagnol · herbata","h","herbata"],["I i","i de « midi » · imię (prénom)","i","imię"],["J j","y de « yaourt » · jak (comment)","y","jak"],["K k","k de « kilo » · kawa","k","kawa"],["L l","l de « lac » · las (forêt)","l","las"],["Ł ł","ou rapide, comme le w anglais · mało (peu)","ou","mało"],["M m","m de « mère » · mama","m","mama"],["N n","n de « nuit » · nos (nez)","n","nos"],["Ń ń","gn de « montagne » · koń (cheval)","gn","koń"],["O o","o de « mot » · okno (fenêtre)","o","okno"],["Ó ó","ou de « loup » · ósmy (huitième)","ou","ósmy"],["P p","p de « papa » · pan (monsieur)","p","pan"],["R r","r roulé avec la pointe de la langue · rok (année)","r","rok"],["S s","s de « soleil » · sok (jus)","s","sok"],["Ś ś","ch doux, mouillé · środa","ch","środa"],["T t","t de « table » · tak (oui)","t","tak"],["U u","ou de « loup » · ulica (rue)","ou","ulica"],["W w","v de « vélo » · woda","v","woda"],["Y y","i prononcé en reculant la langue · ty (tu)","i reculé","ty"],["Z z","z de « zèbre » · zero","z","zero"],["Ź ź","j doux, mouillé · źle (mal)","j doux","źle"],["Ż ż","j de « jour » · żaba","j","żaba"],["ch","h aspiré (comme H h) · chleb","h","chleb"],["cz","tch dur · czas","tch","czas"],["dz","d et z prononcés ensemble · dzwon (cloche)","dz","dzwon"],["dź","dj doux · dźwig (grue)","dj doux","dźwig"],["dż","dj dur · dżem (confiture)","dj","dżem"],["rz","j de « jour » (comme ż) · rzeka","j","rzeka"],["sz","ch de « chat » · szkoła","ch","szkoła"]],
+tip:"Ne cherche pas à tout retenir d’un coup. Revois cette liste chaque jour pendant une semaine : les sons s’installent par répétition.",
+q:[["Combien de lettres compte l’alphabet polonais ?",["26","32","36"],1],["« ń » se lit…",["n","gn comme dans montagne","on"],1],["Quelles lettres sont des voyelles ?",["a, ą, e, ę, i, o, ó, u, y","a, b, c, d","seulement a, e, i, o, u"],0],["@herbata",["thé","eau","pain"],0]]},
+{id:"a2",t:"Lire les syllabes : B + A = BA",i:"Comme à l’école primaire, on lit en associant une consonne et une voyelle. Une syllabe, puis deux, puis un mot entier.",
+g:["<b>Le principe.</b> B + A = BA. M + A = MA. MA + MA = MAMA. Tu sais déjà lire en polonais dès que tu connais ces petites briques.","<b>Les voyelles simples.</b> a = a, e = è, i = i, o = o, u = ou, y = i reculé. Les consonnes gardent toujours le même son : w = v, ł = ou, j = y, g = g dur (gi se lit « gui »).","<b>Les 3 étapes.</b> 1. Joue avec le constructeur ci-dessous. 2. Lis chaque ligne de syllabes à voix haute. 3. Lis les mots coupés en syllabes, d’abord lentement puis en un seul souffle."],
+sy:{c:[["b","b"],["d","d"],["f","f"],["g","g"],["h","h"],["j","y"],["k","k"],["l","l"],["ł","ou"],["m","m"],["p","p"],["r","r"],["t","t"],["w","v"]],v:[["a","a"],["e","è"],["i","i"],["o","o"],["u","ou"],["y","i"]]},
+v:[["ba be bi bo bu by","Ligne du B","ba bè bi bo bou bi"],["ma me mi mo mu my","Ligne du M","ma mè mi mo mou mi"],["ta te ti to tu ty","Ligne du T","ta tè ti to tou ti"],["ka ke ki ko ku ky","Ligne du K","ka kè ki ko kou ki"],["pa pe pi po pu py","Ligne du P","pa pè pi po pou pi"],["da de di do du dy","Ligne du D","da dè di do dou di"],["wa we wi wo wu wy","Ligne du W","va vè vi vo vou vi"],["ła łe łi ło łu ły","Ligne du Ł","oua ouè oui ouo ouou oui"],["ma-ma","maman","MA-ma","mama"],["ta-ta","papa","TA-ta","tata"],["ka-wa","café","KA-va","kawa"],["wo-da","eau","VO-da","woda"],["do-bry","bon","DO-bri","dobry"],["sa-la","salle","SA-la","sala"],["bi-let","billet","BI-lèt","bilet"],["te-le-fon","téléphone","tè-LÈ-fon","telefon"]],
+tip:"Dix minutes de lecture à voix haute chaque jour valent mieux qu’une heure par semaine. Commence très lentement, puis accélère.",
+q:[["B + A =",["ba","va","da"],0],["« wo » se lit…",["vo","wo","ou-o"],0],["« ła » se lit…",["la","oua","va"],1],["@kawa",["café","pain","eau"],0]]},
+{id:"a3",t:"Les syllabes douces : NI, CI, SI, ZI, DZI",i:"Une règle qui revient dans presque chaque mot polonais. Une fois comprise, tu liras beaucoup plus vite.",
+g:["<b>La règle du « i » doux.</b> Quand n, c, s, z, dz sont suivies de « i », la consonne devient douce et mouillée : ni = gni, ci = tchi, si = chi, zi = ji, dzi = dji.","<b>« i » + voyelle.</b> Si le « i » est suivi d’une voyelle, il ne se lit pas : il sert juste à adoucir. « nia » = gna, « cia » = tcha, « sia » = cha, « zia » = ja, « dzia » = dja.","<b>Deux façons d’écrire le même son.</b> Devant une voyelle, on écrit « i » (siostra). Devant une consonne ou en fin de mot, on écrit la lettre accentuée : ś, ć, ź, ń, dź (środa, ćma, koń)."],
+sy:{c:[["n","gn"],["c","tch"],["s","ch"],["z","j"],["dz","dj"]],v:[["ia","a"],["ie","è"],["io","o"],["iu","ou"],["i","i"]]},
+v:[["nia nie nio niu ni","Ligne du N doux","gna gné gno gnou gni"],["cia cie cio ciu ci","Ligne du C doux","tcha tchè tcho tchou tchi"],["sia sie sio siu si","Ligne du S doux","cha chè cho chou chi"],["zia zie zio ziu zi","Ligne du Z doux","ja jè jo jou ji"],["dzia dzie dzio dziu dzi","Ligne du DZ doux","dja djè djo djou dji"],["pa-ni","madame","PA-gni","pani"],["cia-sto","gâteau","TCHA-sto","ciasto"],["sio-stra","sœur","CHO-stra","siostra"],["dzie-ci","enfants","DJÈ-tchi","dzieci"],["dzię-ku-ję","merci","djin-KOU-yè","dziękuję"]],
+tip:"Le mot que tu entendras le plus souvent est « nie » (non) : lis-le « gné », pas « ni-é ».",
+q:[["« cia » se lit…",["tcha","sia","kia"],0],["« nie » se lit…",["gné","ni-é","nè"],0],["Dans « siostra », le « i »…",["adoucit le s et ne se lit pas","se lit i","se lit y"],0],["@ciasto",["gâteau","soupe","maison"],0]]},
+{id:"m1",t:"Alphabet et prononciation",i:"Le polonais s’écrit comme il se prononce. Cette leçon est la plus importante du parcours : prends ton temps et écoute chaque mot plusieurs fois.",
+g:["Le polonais compte 32 lettres. Chaque lettre a un seul son et il n’y a aucune lettre muette. Les signes comme ą, ę, ć, ł, ń, ó, ś, ź, ż ne sont pas des accents : ce sont des lettres à part entière.",
+"<b>Les sons à distinguer.</b> « sz » = ch dur (chat), « ż » et « rz » = j dur (jour), « cz » = tch dur. Leurs versions douces s’écrivent « ś », « ć », « ź » ou « si », « ci », « zi » avant une voyelle : siostra, ciasto, dziękuję.",
+"<b>Les voyelles nasales.</b> « ą » ressemble à « on » et « ę » à « in ». À la fin d’un mot, « ę » devient presque un « è » simple. Devant p ou b, ils se lisent « om » et « em ».",
+"<b>« ł » et « w ».</b> « ł » se prononce comme le w de « water ». « w » se prononce « v » (woda = voda).",
+"<b>L’accent tonique</b> tombe presque toujours sur l’avant-dernière syllabe. Dans la transcription ci-dessous, la syllabe en majuscules est celle qu’on appuie.",
+"<b>Fin de mot.</b> Une consonne sonore finale se durcit : « chleb » se lit « hlèp »."],
+v:[["łódka","barque","OUOUT-ka"],["woda","eau","VO-da"],["szkoła","école","CHKO-oua"],["czas","temps","tchass"],["żaba","grenouille","JA-ba"],["rzeka","rivière","JÈ-ka"],["środa","mercredi","CHRO-da"],["ćma","papillon de nuit","tchma"],["mąka","farine","MON-ka"],["ręka","main","RIN-ka"],["dzień","jour","djègn"],["dziękuję","merci","djin-KOU-yè"]],
+tip:"Pour les sons chuintants, écoute en mode lent (🐢) puis répète à voix haute en exagérant. Tu progresseras bien plus vite qu’en lisant seulement.",
+q:[["Comment se prononce « ł » ?",["comme un l français","comme le w de water","comme un r"],1],["Où tombe l’accent tonique ?",["sur la dernière syllabe","sur l’avant-dernière syllabe","sur la première syllabe"],1],["« cz » se prononce…",["tch","s","k"],0],["@szkoła",["école","gare","pain"],0]]},
+{id:"m2",t:"Salutations et se présenter",i:"Les phrases à connaître dès le premier jour pour être poli et se faire comprendre.",
+g:["<b>Deux niveaux de politesse.</b> Avec un inconnu, un professeur ou un collègue, on dit « pan » (monsieur) ou « pani » (madame). Avec des amis ou la famille, on se tutoie avec « ty ».",
+"<b>Les salutations.</b> « Dzień dobry » (mot à mot : bon jour) se dit de la première rencontre jusqu’à la fin d’après-midi. Le soir, on dit « Dobry wieczór ». « Cześć » s’emploie à l’arrivée comme au départ, entre proches seulement.",
+"<b>Se présenter.</b> « Mam na imię… » signifie « j’ai pour prénom… ». On peut aussi dire « Nazywam się… » (je m’appelle). À « Jak się masz ? », on répond « Dobrze, dziękuję » (bien, merci)."],
+v:[["Cześć","Salut","tchèchtch"],["Dzień dobry","Bonjour","djègn DO-bri"],["Dobry wieczór","Bonsoir","DO-bri VIÉ-tchour"],["Do widzenia","Au revoir","do vi-DJÈ-gna"],["Dziękuję","Merci","djin-KOU-yè"],["Proszę","S’il vous plaît / je vous en prie","PRO-chè"],["Przepraszam","Pardon, excusez-moi","pchè-PRA-cham"],["Tak","Oui","tak"],["Nie","Non","gné"],["Jak się masz?","Comment vas-tu ?","yak chiè MACH"],["Dobrze, dziękuję","Bien, merci","DO-bjè, djin-KOU-yè"],["Mam na imię Marc","Je m’appelle Marc","mam na I-miè mark"]],
+tip:"Dans « Nie », le « ie » se lit « gné » comme dans « montagne ».",
+q:[["Comment dire « merci » ?",["Proszę","Dziękuję","Przepraszam"],1],["Quelle formule utilise-t-on avec un professeur ?",["Cześć","Dzień dobry","Mam na imię"],1],["« Mam na imię… » signifie…",["je m’appelle…","j’ai faim","je suis étudiant"],0],["@Dziękuję",["merci","au revoir","pardon"],0]]},
+{id:"m3",t:"Le verbe être (być)",i:"Le verbe « być » est le plus utilisé du polonais. Il est irrégulier, donc à apprendre par cœur.",
+g:["<b>Conjugaison.</b> ja jestem, ty jesteś, on/ona/ono jest, my jesteśmy, wy jesteście, oni/one są.",
+"<b>Le pronom est facultatif.</b> « Jestem » suffit pour dire « je suis », car la terminaison indique la personne. On ajoute « ja » seulement pour insister.",
+"<b>Les genres.</b> Le polonais a trois genres : masculin, féminin, neutre. Les adjectifs s’accordent : « zmęczony » (fatigué, homme) et « zmęczona » (fatiguée, femme).",
+"<b>Pluriel.</b> « oni » désigne un groupe avec au moins un homme, « one » un groupe de femmes uniquement."],
+v:[["ja jestem","je suis","ya YÈS-tèm"],["ty jesteś","tu es","ti YÈS-tèch"],["on / ona jest","il / elle est","on / O-na yèst"],["my jesteśmy","nous sommes","mi yès-TÈCH-mi"],["wy jesteście","vous êtes","vi yès-TÈCH-tchè"],["oni są","ils sont","O-gni son"],["Jestem z Francji","Je viens de France","YÈS-tèm s FRAN-tsyi"],["Jestem zmęczony","Je suis fatigué (homme)","YÈS-tèm zmèn-TCHO-ni"],["Jestem zmęczona","Je suis fatiguée (femme)","YÈS-tèm zmèn-TCHO-na"]],
+tip:"« Jestem z… » (je viens de…) est la phrase la plus utile pour se présenter : Jestem z Paryża, z Lyonu, z Maroka.",
+q:[["« Ty ___ » : quelle forme ?",["jestem","jesteś","jest"],1],["« Jesteśmy » correspond à…",["nous sommes","ils sont","je suis"],0],["Une femme dit « Je suis fatiguée » :",["Jestem zmęczony","Jestem zmęczona","Jesteś zmęczona"],1],["@jestem",["je suis","tu es","il est"],0]]},
+{id:"m4",t:"Les nombres de 0 à 10",i:"Les nombres servent partout : prix, horaires, numéros de téléphone.",
+g:["<b>Le genre de « un » et « deux ».</b> « 1 » = jeden (masculin), jedna (féminin), jedno (neutre). « 2 » = dwa (masculin, neutre), dwie (féminin).",
+"<b>Le nom après un nombre.</b> Après 2, 3 ou 4, le nom est au pluriel : dwa domy. À partir de 5, il prend une autre forme : pięć domów. Tu étudieras ces cas au niveau A2. Retiens simplement que le nom change.",
+"<b>Prononciation.</b> « ę » dans « pięć » est nasale, « ć » final se lit « tch » doux. « sz » dans « sześć » est le ch dur."],
+v:[["zero","0","ZÈ-ro"],["jeden","1","YÈ-dèn"],["dwa","2","dva"],["trzy","3","tchi"],["cztery","4","TCHTÈ-ri"],["pięć","5","pyèntch"],["sześć","6","chèchtch"],["siedem","7","CHÈ-dèm"],["osiem","8","O-chèm"],["dziewięć","9","DJÈ-vyèntch"],["dziesięć","10","DJÈ-chèntch"]],
+tip:"Mémo : pięć, sześć, dziewięć et dziesięć se terminent en « -ć » ; siedem et osiem se terminent en « -m ».",
+q:[["« pięć » =",["4","5","6"],1],["Comment dit-on 3 ?",["trzy","cztery","dwa"],0],["« dwie » est…",["le 2 féminin","le 12","le 3"],0],["@siedem",["7","8","9"],0]]},
+{id:"m5",t:"Famille, études et quotidien",i:"Du vocabulaire concret pour parler de ta vie et de tes études.",
+g:["<b>Repérer le genre.</b> La plupart des noms en « -a » sont féminins (mama, siostra, praca). Ceux qui finissent par une consonne sont masculins (brat, dom, egzamin). Les noms en « -o » ou « -e » sont souvent neutres. Exception : « tata » (papa) est masculin.",
+"<b>Pas d’articles.</b> Le polonais n’a ni « le », ni « la », ni « un ». « Dom » veut dire « la maison » ou « une maison » selon le contexte.",
+"<b>Étudier.</b> « Uczyć się » (apprendre, étudier) est un verbe réfléchi : uczę się, uczysz się, uczy się. Beaucoup de mots universitaires viennent du latin : uniwersytet, egzamin, student."],
+v:[["mama","maman","MA-ma"],["tata","papa","TA-ta"],["brat","frère","brat"],["siostra","sœur","CHO-stra"],["przyjaciel","ami","pchi-YA-tchèl"],["dom","maison","dom"],["praca","travail","PRA-tsa"],["uniwersytet","université","ou-ni-vèr-SI-tèt"],["wykład","cours magistral","VIK-ouat"],["egzamin","examen","èg-ZA-min"],["Uczę się polskiego","J’apprends le polonais","OU-tchè chiè pol-SKYÈ-go"]],
+tip:"Pour mémoriser le genre, apprends toujours le mot avec son pronom : « to jest brat » (c’est un frère), « to jest siostra ».",
+q:[["« siostra » =",["sœur","frère","amie"],0],["« egzamin » =",["exercice","examen","école"],1],["« tata » est de genre…",["féminin","masculin","neutre"],1],["@uniwersytet",["université","maison","travail"],0]]},
+{id:"m6",t:"Verbes courants au présent",i:"Pour parler de ce que tu fais, tu as besoin de quelques verbes essentiels et de leurs terminaisons.",
+g:["<b>Mieć (avoir).</b> mam, masz, ma, mamy, macie, mają.",
+"<b>Deux schémas fréquents.</b> « Mówić » (parler) fait : mówię, mówisz, mówi, mówimy, mówicie, mówią. « Mieszkać » (habiter) fait : mieszkam, mieszkasz, mieszka, mieszkamy, mieszkacie, mieszkają.",
+"<b>La négation</b> se place devant le verbe : Nie rozumiem (je ne comprends pas). Il n’y a pas de second mot à placer après le verbe, contrairement au français « ne… pas ».",
+"<b>Langue.</b> Pour dire « parler une langue », on emploie « po » + adverbe : mówię po polsku, po francusku, po angielsku."],
+v:[["mam","j’ai","mam"],["masz","tu as","mach"],["mówię po polsku","je parle polonais","MOU-viè po POL-skou"],["mieszkam","j’habite","MYÈSH-kam"],["pracuję","je travaille","pra-TSOU-yè"],["rozumiem","je comprends","ro-ZOU-myèm"],["Nie rozumiem","Je ne comprends pas","gné ro-ZOU-myèm"],["Mówię trochę po polsku","Je parle un peu polonais","MOU-viè TRO-hè po POL-skou"],["Mieszkam w Paryżu","J’habite à Paris","MYÈSH-kam f pa-RI-jou"]],
+tip:"« ch » en polonais se prononce comme un « h » aspiré (comme le « j » espagnol), par exemple dans « trochę ».",
+q:[["« Mam » =",["j’ai","je suis","je vais"],0],["« Pracuję » =",["j’habite","je travaille","je comprends"],1],["Comment dire « je ne comprends pas » ?",["Nie rozumiem","Rozumiem","Nie mam"],0],["@mieszkam",["j’habite","je travaille","je parle"],0]]},
+{id:"m7",t:"Au café et au restaurant",i:"Les phrases pour commander et payer sans stress.",
+g:["<b>Commander poliment.</b> « Poproszę » signifie « je demanderais » : c’est l’équivalent de « je voudrais » ou « je prendrai ». Le nom qui suit se met à l’accusatif.",
+"<b>Un premier cas.</b> Les noms féminins en « -a » prennent « -ę » à l’accusatif : kawa → kawę, herbata → herbatę. Les noms en « -a » au masculin ou en consonne restent presque inchangés : chleb, ser.",
+"<b>Payer.</b> « Rachunek, proszę » (l’addition, s’il vous plaît) est universel. Le serveur répondra souvent « Proszę bardzo » (voilà)."],
+v:[["kawa","café","KA-va"],["herbata","thé","hèr-BA-ta"],["woda","eau","VO-da"],["chleb","pain","hlèp"],["zupa","soupe","ZOU-pa"],["Poproszę kawę","Je voudrais un café","po-PRO-chè KA-vè"],["Ile to kosztuje?","Combien ça coûte ?","I-lè to kosh-TOU-yè"],["Rachunek, proszę","L’addition, s’il vous plaît","ra-HOU-nèk PRO-chè"],["Smacznego!","Bon appétit !","smatch-NÈ-go"]],
+tip:"Le « h » de « herbata » et le « ch » de « chleb » sont le même son : un h aspiré, venant du fond de la gorge.",
+q:[["« herbata » =",["thé","eau","bière"],0],["« Ile to kosztuje? » =",["Où est-ce ?","Combien ça coûte ?","Qui est-ce ?"],1],["« Poproszę kawę » =",["Je voudrais un café","Je suis un café","J’ai un café"],0],["@chleb",["pain","soupe","eau"],0]]},
+{id:"m8",t:"Se déplacer en ville",i:"Demander son chemin et comprendre les réponses de base.",
+g:["<b>Demander un lieu.</b> « Gdzie jest… ? » + le nom : Gdzie jest dworzec ? Au pluriel : Gdzie są toalety ? (où sont les toilettes ?).",
+"<b>Les directions.</b> prosto (tout droit), w lewo (à gauche), w prawo (à droite). « w » est ici la préposition « à/en » : elle se prononce « v », ou « f » devant « p » : « f PRA-vo ».",
+"<b>Politesse.</b> On commence par « Przepraszam » pour attirer l’attention. Si tu ne comprends pas : « Nie rozumiem » ou « Proszę mówić wolniej » (parlez plus lentement)."],
+v:[["Gdzie jest…?","Où est… ?","gdjè yèst"],["dworzec","gare","DVO-jèts"],["przystanek","arrêt","pchi-STA-nèk"],["bilet","billet","BI-lèt"],["prosto","tout droit","PRO-sto"],["w lewo","à gauche","v LÈ-vo"],["w prawo","à droite","f PRA-vo"],["Proszę mówić wolniej","Parlez plus lentement, s’il vous plaît","PRO-chè MOU-vitch VOL-gnèy"],["Czy mówi pan po angielsku?","Parlez-vous anglais ? (à un homme)","tchi MOU-vi pan po an-GYÈL-skou"]],
+tip:"Entraîne-toi à poser « Gdzie jest dworzec ? » à voix haute, avec le mode lent (🐢) en boucle : c’est le groupe de consonnes « gdz » qui est le plus difficile.",
+q:[["« w lewo » =",["à droite","à gauche","tout droit"],1],["« dworzec » =",["gare","arrêt","billet"],0],["« Gdzie jest…? » =",["Combien… ?","Où est… ?","Quand… ?"],1],["@prosto",["tout droit","à gauche","à droite"],0]]},
+{id:"m9",lv:"A2",t:"Les 7 cas : vue d’ensemble",i:"Le polonais change la fin des mots selon leur rôle dans la phrase : ce sont les cas. C’est moins compliqué qu’il n’y paraît si on les apprend un par un, avec des phrases complètes.",
+g:["<b>Pourquoi des cas ?</b> En français, l’ordre des mots et les prépositions indiquent le rôle d’un mot. En polonais, c’est la terminaison. Avec « kawa » (café) : Kawa jest dobra. Piję kawę. Nie mam kawy. Le même mot, trois terminaisons.","<b>Les 7 cas et leur question.</b> Nominatif (kto ? co ? : le sujet), génitif (kogo ? czego ? : absence, négation, quantité), datif (komu ? czemu ? : à qui), accusatif (kogo ? co ? : complément direct), instrumental (z kim ? z czym ? : avec qui, avec quoi), locatif (o kim ? o czym ? : après certaines prépositions), vocatif (pour appeler quelqu’un).","<b>Méthode.</b> N’apprends pas de grands tableaux par cœur. Retiens une phrase modèle par cas, puis remplace le mot par un autre. Commence par l’accusatif, tu l’utiliseras tout de suite."],
+v:[["Kawa jest dobra","Le café est bon (nominatif)","KA-va yèst DO-bra"],["Piję kawę","Je bois un café (accusatif)","PI-yè KA-vè"],["Nie mam kawy","Je n’ai pas de café (génitif)","gné mam KA-vi"],["Daję kawę mamie","Je donne un café à maman (datif)","DA-yè KA-vè MA-myè"],["Idę z mamą","Je vais avec maman (instrumental)","I-dè z MA-mon"],["Myślę o mamie","Je pense à maman (locatif)","MICH-lè o MA-myè"],["Mamo!","Maman ! (vocatif)","MA-mo"]],
+tip:"Quand tu rencontres un mot dont la terminaison change, demande-toi quelle question il répond : kogo ? czego ? komu ? Cela te dit le cas.",
+q:[["« Nie mam kawy » est au…",["nominatif","génitif","vocatif"],1],["Dans « Piję kawę », « kawę » est à…",["l’accusatif","l’instrumental","le datif"],0],["Combien y a-t-il de cas en polonais ?",["5","7","9"],1],["@kawę",["café","eau","pain"],0]]},
+{id:"m10",lv:"A2",t:"Le passé",i:"Le passé polonais est plus simple que le passé français : une seule forme, qui change selon le genre de celui qui parle.",
+g:["<b>Formation.</b> On part de l’infinitif, on retire « -ć » et on ajoute « -ł- » puis la terminaison de la personne. Par exemple : być → byłem (homme) / byłam (femme).","<b>Être au passé.</b> byłem / byłam (je), byłeś / byłaś (tu), był / była / było (il, elle, ça), byliśmy / byłyśmy (nous), byliście / byłyście (vous), byli / były (ils, elles).","<b>Un seul passé.</b> Pas de distinction entre imparfait et passé composé : « byłem » traduit « j’étais » et « j’ai été ». Même schéma pour les autres verbes : mieszkać → mieszkałem, pracować → pracowałem, uczyć się → uczyłem się."],
+v:[["byłem","j’étais (homme)","BI-ouèm"],["byłam","j’étais (femme)","BI-ouam"],["Byłem w Polsce","J’étais en Pologne","BI-ouèm v POL-tsè"],["Mieszkałem w Paryżu","J’habitais à Paris","myèsh-KA-ouèm v pa-RI-jou"],["Pracowałam wczoraj","J’ai travaillé hier (femme)","pra-tso-VA-ouam FTCHO-raï"],["Uczyłem się polskiego","J’ai appris le polonais","ou-TCHI-ouèm chiè pol-SKYÈ-go"],["wczoraj","hier","FTCHO-raï"]],
+tip:"Le « ł » du passé se prononce « ou » : byłem = BI-ouèm. N’oublie jamais le genre : un homme dit -em, une femme dit -am.",
+q:[["Une femme dit « j’étais » :",["byłem","byłam","był"],1],["Le passé se forme à partir…",["de l’infinitif sans -ć, plus -ł-","du futur","du nom"],0],["« Byłem w Polsce » =",["J’étais en Pologne","Je vais en Pologne","Je suis polonais"],0],["@wczoraj",["hier","demain","aujourd’hui"],0]]}
+];
+var R=[
+["A2 · Les cas et le passé",["Le génitif : absence, quantité, négation","Le futur","Les nombres jusqu’à 1000, l’heure et la date","Faire ses courses et la santé"]],
+["B1 · Autonomie dans la vie quotidienne",["Le datif et l’instrumental","Le locatif et les prépositions","L’aspect perfectif et imperfectif","Le conditionnel","Administration : logement, banque, université","Écrire un e-mail formel"]],
+["B2 · Études et travail",["Le vocatif et les cas au pluriel","Participes et voix passive","Vocabulaire académique et professionnel","Comprendre articles et podcasts","Entretien d’embauche et présentation orale","Préparation à l’examen de polonais B2"]]
+];
+var app=document.getElementById("app"),P={};
+try{P=JSON.parse(localStorage.getItem("pl-progress")||"{}")}catch(e){P={}}
+function save(){try{localStorage.setItem("pl-progress",JSON.stringify(P))}catch(e){}}
+function pv(){try{return speechSynthesis.getVoices().filter(function(x){return /^pl/i.test(x.lang)})[0]||null}catch(e){return null}}
+function say(t,slow){try{speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t),v=pv();u.lang="pl-PL";if(v)u.voice=v;u.rate=slow?0.5:0.85;speechSynthesis.speak(u)}catch(e){}}
+function ext(t){return t.indexOf(" ")<0?"https://forvo.com/word/"+encodeURIComponent(t)+"/#pl":"https://translate.google.com/?sl=pl&tl=fr&op=translate&text="+encodeURIComponent(t)}
+function chk(){var w=document.getElementById("wn");if(w)w.style.display=pv()?"none":"block"}
+try{speechSynthesis.onvoiceschanged=chk}catch(e){}
+function home(){
+var n=L.filter(function(m){return P[m.id]}).length,pc=Math.round(n/L.length*100);
+function it(m){var k=L.indexOf(m);return '<a class="mod'+(P[m.id]?' done':'')+'" href="#'+m.id+'"><span class="dot">'+(P[m.id]?'✓':(k+1))+'</span><span><b>'+m.t+'</b><span class="mute">'+(P[m.id]?'Score : '+P[m.id].s+'/'+P[m.id].n:'Explications, audio, quiz, dictée')+'</span></span></a>'}
+function soon(x){return '<div class="mod soon"><span class="dot">·</span><span><b>'+x+'</b><span class="mute">Bientôt disponible</span></span></div>'}
+var h='<h1>Polonais pas à pas</h1><p class="mute">Un parcours pour étudier, vivre et travailler en Pologne. Objectif final : le niveau B2.</p><div class="bar"><i style="width:'+pc+'%"></i></div><p class="mute">'+n+' leçon'+(n>1?'s':'')+' terminée'+(n>1?'s':'')+' sur '+L.length+'</p>';
+h+='<div class="level">A1 · Les bases</div>'+L.filter(function(m){return !m.lv}).map(it).join("");
+h+='<div class="level">'+R[0][0]+'</div>'+L.filter(function(m){return m.lv=="A2"}).map(it).join("")+R[0][1].map(soon).join("");
+R.slice(1).forEach(function(r){h+='<div class="level">'+r[0]+'</div>'+r[1].map(soon).join("")});
+h+='<button class="reset" id="rs">Effacer ma progression</button><p class="mute" style="margin-top:24px">Version 1.0 · Les voix audio dépendent de ton appareil.</p>';
+app.innerHTML=h;
+document.getElementById("rs").onclick=function(){if(confirm("Effacer toute ta progression ?")){P={};save();home()}};
+}
+function lesson(m,k){
+var h='<a class="back" href="#">‹ Retour au parcours</a><h2>'+m.t+'</h2><p>'+m.i+'</p><h3>Comprendre</h3>';
+m.g.forEach(function(p){h+='<p>'+p+'</p>'});
+if(m.id=="a1")h+='<h3>Appuie sur une lettre</h3><div class="how"><div id="al"></div><div id="ao" style="margin-top:10px"></div></div>';if(m.sy)h+='<h3>Construis une syllabe</h3><div class="how"><div id="sc"></div><div id="sv"></div><div id="so" style="margin-top:10px"></div></div>';h+='<h3>Vocabulaire et prononciation</h3><div class="how"><b>Comment l’utiliser :</b> ♪ lit le mot à vitesse normale, 🐢 le lit lentement, ↗ ouvre une prononciation de locuteur natif. La ligne rouge donne la prononciation « à la française » ; les majuscules marquent la syllabe accentuée.<div class="warn" id="wn">Ton appareil ne propose pas de voix polonaise. Ajoute-la dans les réglages : iPhone, Réglages › Accessibilité › Contenu énoncé › Voix › Polonais. Android, Réglages › Synthèse vocale › Langue. Sinon, utilise ↗.</div></div><div class="vocab" style="margin-top:12px">';
+m.v.forEach(function(w){var sp=w[3]||w[0];h+='<div class="row"><div class="w"><div class="pl">'+w[0]+'</div><div class="ph">'+w[2]+'</div><div class="fr">'+w[1]+'</div></div><button class="bt" aria-label="Écouter" data-s="'+sp+'" data-n="'+(NM[w[0]]||'')+'">♪</button><button class="bt" aria-label="Écouter lentement" data-s="'+sp+'" data-l="1" data-n="'+(NM[w[0]]||'')+'">🐢</button><a class="bt" aria-label="Locuteur natif" target="_blank" rel="noopener" href="'+ext(sp)+'">↗</a></div>'});
+h+='</div><div class="tip"><b>À retenir</b><p>'+m.tip+'</p></div><h3>Quiz</h3><div id="quiz">';
+m.q.forEach(function(q,qi){var e=q[0].charAt(0)=="@",w=q[0].slice(1);h+='<div class="q" data-q="'+qi+'">'+(e?'<p>Écoute, puis choisis la traduction.</p><button class="play" data-s="'+w+'">♪ Écouter</button> <button class="play" data-s="'+w+'" data-l="1">🐢 Lent</button>':'<p>'+q[0]+'</p>');q[1].forEach(function(o,oi){h+='<button class="opt" data-o="'+oi+'">'+o+'</button>'});h+='</div>'});
+h+='</div><div class="result" id="res"></div>'+exh(m);
+app.innerHTML=h;window.scrollTo(0,0);chk();if(m.sy)bld(m.sy);if(m.id=="a1")grid(m);exw();
+app.querySelectorAll("[data-s]").forEach(function(b){b.onclick=function(){sayq([b.getAttribute("data-n"),b.getAttribute("data-s")],b.getAttribute("data-l"))}});
+var done=0,score=0;
+app.querySelectorAll(".q").forEach(function(box){
+var q=m.q[+box.getAttribute("data-q")],btns=box.querySelectorAll(".opt");
+btns.forEach(function(b,i){b.onclick=function(){
+if(box.getAttribute("data-d"))return;box.setAttribute("data-d","1");
+btns[q[2]].classList.add("good");if(i===q[2])score++;else b.classList.add("bad");
+done++;
+if(done===m.q.length){P[m.id]={s:score,n:m.q.length};save();
+var nx=L[k+1];
+document.getElementById("res").innerHTML='<p><b>Score : '+score+'/'+m.q.length+'</b>'+(score===m.q.length?' Parfait !':' Relis la leçon et réécoute les mots difficiles.')+'</p>'+(nx?'<a class="btn" href="#'+nx.id+'">Leçon suivante</a>':'<a class="btn" href="#">Retour au parcours</a>');}
+}});
+});
+}
+var NM={"A a":"a","Ą ą":"ą","B b":"be","C c":"ce","Ć ć":"cie","D d":"de","E e":"e","Ę ę":"ę","F f":"ef","G g":"gie","H h":"ha","I i":"i","J j":"jot","K k":"ka","L l":"el","Ł ł":"eł","M m":"em","N n":"en","Ń ń":"eń","O o":"o","Ó ó":"ó","P p":"pe","R r":"er","S s":"es","Ś ś":"eś","T t":"te","U u":"u","W w":"wu","Y y":"igrek","Z z":"zet","Ź ź":"ziet","Ż ż":"żet"};
+function sayq(a,slow){try{speechSynthesis.cancel();var v=pv();a.filter(Boolean).forEach(function(t){var u=new SpeechSynthesisUtterance(t);u.lang="pl-PL";if(v)u.voice=v;u.rate=slow?0.5:0.8;speechSynthesis.speak(u)})}catch(e){}}
+function grid(m){
+var al=document.getElementById("al"),ao=document.getElementById("ao"),L2=m.v.filter(function(w){return NM[w[0]]});
+al.innerHTML=L2.map(function(w,i){return '<button class="ch" data-i="'+i+'">'+w[0]+'</button>'}).join(' ');
+al.querySelectorAll(".ch").forEach(function(b){b.onclick=function(){
+al.querySelectorAll(".ch").forEach(function(o){o.classList.remove("on")});b.classList.add("on");
+var w=L2[+b.getAttribute("data-i")];
+ao.innerHTML='<div style="font:700 2.2rem var(--head)">'+w[0]+'</div><div class="ph">son : '+w[2]+' · nom de la lettre : « '+NM[w[0]]+' »</div><div class="fr">'+w[1]+'</div>';
+sayq([NM[w[0]],w[3]])}});
+}
+function bld(d){
+var c=-1,v=-1,sc=document.getElementById("sc"),sv=document.getElementById("sv"),so=document.getElementById("so");
+function mk(a,t){return a.map(function(x,i){return '<button class="ch" data-i="'+i+'">'+x[0]+'</button>'}).join(' ')}
+sc.innerHTML='<p class="mute">1. Choisis une consonne</p>'+mk(d.c);
+sv.innerHTML='<p class="mute">2. Choisis une voyelle</p>'+mk(d.v);
+function upd(){if(c<0||v<0)return;var a=d.c[c],b=d.v[v],y=a[0]+b[0];
+so.innerHTML='<div style="font:700 2rem var(--head)">'+a[0].toUpperCase()+' + '+b[0].toUpperCase()+' = '+y.toUpperCase()+'</div><div class="ph">se lit « '+a[1]+b[1]+' »</div>';say(y,1)}
+function wire(box,set){box.querySelectorAll(".ch").forEach(function(b){b.onclick=function(){box.querySelectorAll(".ch").forEach(function(o){o.classList.remove("on")});b.classList.add("on");set(+b.getAttribute("data-i"));upd()}})}
+wire(sc,function(i){c=i});wire(sv,function(i){v=i});
+}
+function exh(m){
+var d=m.v.map(function(w){return w[3]||w[0]}).filter(function(t){return t.indexOf(" ")<0&&t.indexOf("-")<0&&t.length>1}).slice(0,4);
+var h='<h3>Dictée</h3><p class="mute">Écoute le mot, puis écris-le. Utilise ces boutons pour les lettres spéciales.</p><div id="pal">'+"ąćęłńóśźż".split("").map(function(c){return '<button class="ch" data-c="'+c+'">'+c+'</button>'}).join(" ")+'</div>';
+d.forEach(function(t){h+='<div class="q"><button class="play" data-s="'+t+'">♪ Écouter</button> <button class="play" data-s="'+t+'" data-l="1">🐢 Lent</button><br><input class="dc" data-a="'+t+'" aria-label="Ta réponse" autocomplete="off" autocapitalize="off" spellcheck="false"><button class="play dk">Vérifier</button><div class="mute dr"></div></div>'});
+h+='<h3>Enregistre-toi</h3><div class="how">Enregistre ta voix, réécoute-la et compare avec le modèle. L’enregistrement reste sur ton appareil.<div style="margin-top:10px"><button class="play" id="rc">● Enregistrer</button> <button class="play" id="st" disabled>■ Stop</button></div><audio id="au" controls style="width:100%;margin-top:10px;display:none"></audio><div class="mute" id="rm"></div></div>';
+return h}
+function nz(x){return x.toLowerCase().replace(/ł/g,"l").normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
+function exw(){
+var cur=null;
+app.querySelectorAll(".dc").forEach(function(i){i.onfocus=function(){cur=i}});
+app.querySelectorAll("#pal .ch").forEach(function(b){b.onclick=function(){if(!cur)cur=app.querySelector(".dc");if(cur){cur.value+=b.getAttribute("data-c");cur.focus()}}});
+app.querySelectorAll(".dk").forEach(function(b){b.onclick=function(){
+var q=b.parentNode,i=q.querySelector(".dc"),r=q.querySelector(".dr"),a=i.getAttribute("data-a"),v=i.value.trim().toLowerCase();
+if(v===a.toLowerCase())r.innerHTML="<b style='color:var(--ok)'>Correct !</b>";
+else if(v&&nz(v)===nz(a))r.innerHTML="Presque : attention aux lettres spéciales. Réponse : <b>"+a+"</b>";
+else r.innerHTML="Réponse : <b>"+a+"</b>"}});
+var rc=document.getElementById("rc"),st=document.getElementById("st"),au=document.getElementById("au"),rm=document.getElementById("rm"),mr=null,cn=[];
+rc.onclick=function(){
+if(!navigator.mediaDevices||!window.MediaRecorder){rm.textContent="L’enregistrement n’est pas disponible sur ce navigateur.";return}
+navigator.mediaDevices.getUserMedia({audio:true}).then(function(sm){
+cn=[];mr=new MediaRecorder(sm);
+mr.ondataavailable=function(e){cn.push(e.data)};
+mr.onstop=function(){sm.getTracks().forEach(function(t){t.stop()});au.src=URL.createObjectURL(new Blob(cn,{type:mr.mimeType}));au.style.display="block";au.play();rc.disabled=false;st.disabled=true;rm.textContent="Réécoute et compare avec le modèle."};
+mr.start();rc.disabled=true;st.disabled=false;rm.textContent="Enregistrement en cours…"
+}).catch(function(){rm.textContent="Micro refusé. Autorise le micro dans les réglages du navigateur."})};
+st.onclick=function(){if(mr&&mr.state=="recording")mr.stop()};
+}
+function route(){
+var id=location.hash.slice(1),k=L.findIndex(function(m){return m.id===id});
+if(k<0)home();else lesson(L[k],k);
+}
+window.addEventListener("hashchange",route);route();
+</script>
+</body>
+</html>
