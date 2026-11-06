@@ -160,7 +160,7 @@ var app=document.getElementById("app"),P={};
 try{P=JSON.parse(localStorage.getItem("pl-progress")||"{}")}catch(e){P={}}
 function save(){try{localStorage.setItem("pl-progress",JSON.stringify(P))}catch(e){}}
 function pv(){try{return speechSynthesis.getVoices().filter(function(x){return /^pl/i.test(x.lang)})[0]||null}catch(e){return null}}
-function say(t,slow){try{speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t),v=pv();u.lang="pl-PL";if(v)u.voice=v;u.rate=slow?0.5:0.85;speechSynthesis.speak(u)}catch(e){}}
+var cur_a=null;
 function ext(t){return t.indexOf(" ")<0?"https://forvo.com/word/"+encodeURIComponent(t)+"/#pl":"https://translate.google.com/?sl=pl&tl=fr&op=translate&text="+encodeURIComponent(t)}
 function chk(){var w=document.getElementById("wn");if(w)w.style.display=pv()?"none":"block"}
 try{speechSynthesis.onvoiceschanged=chk}catch(e){}
@@ -179,7 +179,7 @@ document.getElementById("rs").onclick=function(){if(confirm("Effacer toute ta pr
 function lesson(m,k){
 var h='<a class="back" href="#">‹ Retour au parcours</a><h2>'+m.t+'</h2><p>'+m.i+'</p><h3>Comprendre</h3>';
 m.g.forEach(function(p){h+='<p>'+p+'</p>'});
-if(m.id=="a1")h+='<h3>Appuie sur une lettre</h3><div class="how"><div id="al"></div><div id="ao" style="margin-top:10px"></div></div>';if(m.sy)h+='<h3>Construis une syllabe</h3><div class="how"><div id="sc"></div><div id="sv"></div><div id="so" style="margin-top:10px"></div></div>';h+='<h3>Vocabulaire et prononciation</h3><div class="how"><b>Comment l’utiliser :</b> ♪ lit le mot à vitesse normale, 🐢 le lit lentement, ↗ ouvre une prononciation de locuteur natif. La ligne rouge donne la prononciation « à la française » ; les majuscules marquent la syllabe accentuée.<div class="warn" id="wn">Ton appareil ne propose pas de voix polonaise. Ajoute-la dans les réglages : iPhone, Réglages › Accessibilité › Contenu énoncé › Voix › Polonais. Android, Réglages › Synthèse vocale › Langue. Sinon, utilise ↗.</div></div><div class="vocab" style="margin-top:12px">';
+if(m.id=="a1")h+='<h3>Appuie sur une lettre</h3><div class="how"><div id="al"></div><div id="ao" style="margin-top:10px"></div></div>';if(m.sy)h+='<h3>Construis une syllabe</h3><div class="how"><div id="sc"></div><div id="sv"></div><div id="so" style="margin-top:10px"></div></div>';h+='<h3>Vocabulaire et prononciation</h3><div class="how"><b>Comment l’utiliser :</b> ♪ lit le mot à vitesse normale, 🐢 le lit lentement, ↗ ouvre une prononciation de locuteur natif. La ligne rouge donne la prononciation « à la française » ; les majuscules marquent la syllabe accentuée.<div class="warn" id="wn">Pas de voix polonaise sur cet appareil : le site utilise alors une voix en ligne (connexion nécessaire). Pour une meilleure qualité, ajoute-la : iPhone, Réglages › Accessibilité › Contenu énoncé › Voix › Polonais. Android, Réglages › Synthèse vocale.</div></div><div class="vocab" style="margin-top:12px">';
 m.v.forEach(function(w){var sp=w[3]||w[0];h+='<div class="row"><div class="w"><div class="pl">'+w[0]+'</div><div class="ph">'+w[2]+'</div><div class="fr">'+w[1]+'</div></div><button class="bt" aria-label="Écouter" data-s="'+sp+'" data-n="'+(NM[w[0]]||'')+'">♪</button><button class="bt" aria-label="Écouter lentement" data-s="'+sp+'" data-l="1" data-n="'+(NM[w[0]]||'')+'">🐢</button><a class="bt" aria-label="Locuteur natif" target="_blank" rel="noopener" href="'+ext(sp)+'">↗</a></div>'});
 h+='</div><div class="tip"><b>À retenir</b><p>'+m.tip+'</p></div><h3>Quiz</h3><div id="quiz">';
 m.q.forEach(function(q,qi){var e=q[0].charAt(0)=="@",w=q[0].slice(1);h+='<div class="q" data-q="'+qi+'">'+(e?'<p>Écoute, puis choisis la traduction.</p><button class="play" data-s="'+w+'">♪ Écouter</button> <button class="play" data-s="'+w+'" data-l="1">🐢 Lent</button>':'<p>'+q[0]+'</p>');q[1].forEach(function(o,oi){h+='<button class="opt" data-o="'+oi+'">'+o+'</button>'});h+='</div>'});
@@ -200,7 +200,18 @@ document.getElementById("res").innerHTML='<p><b>Score : '+score+'/'+m.q.length+'
 });
 }
 var NM={"A a":"a","Ą ą":"ą","B b":"be","C c":"ce","Ć ć":"cie","D d":"de","E e":"e","Ę ę":"ę","F f":"ef","G g":"gie","H h":"ha","I i":"i","J j":"jot","K k":"ka","L l":"el","Ł ł":"eł","M m":"em","N n":"en","Ń ń":"eń","O o":"o","Ó ó":"ó","P p":"pe","R r":"er","S s":"es","Ś ś":"eś","T t":"te","U u":"u","W w":"wu","Y y":"igrek","Z z":"zet","Ź ź":"ziet","Ż ż":"żet"};
-function sayq(a,slow){try{speechSynthesis.cancel();var v=pv();a.filter(Boolean).forEach(function(t){var u=new SpeechSynthesisUtterance(t);u.lang="pl-PL";if(v)u.voice=v;u.rate=slow?0.5:0.8;speechSynthesis.speak(u)})}catch(e){}}
+function note(t){var n=document.getElementById("nt");if(!n){n=document.createElement("div");n.id="nt";n.style.cssText="position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:10px 14px;border-radius:8px;font:15px/1.4 var(--head);z-index:9";document.body.appendChild(n)}n.textContent=t;n.style.display="block";clearTimeout(n.t);n.t=setTimeout(function(){n.style.display="none"},5000)}
+function aud(l,slow,i){if(i>=l.length)return;var a=new Audio("https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=pl&q="+encodeURIComponent(l[i]));cur_a=a;a.referrerPolicy="no-referrer";a.playbackRate=slow?0.7:1;a.onended=function(){aud(l,slow,i+1)};a.onerror=function(){note("Le son n’a pas pu être chargé. Vérifie ta connexion et le volume, ou utilise le bouton ↗.")};var p=a.play();if(p&&p.catch)p.catch(function(){note("Le son est bloqué. Vérifie le volume et que le téléphone n’est pas en mode silencieux.")})}
+function sayq(a,slow){
+var l=a.filter(Boolean);if(!l.length)return;
+try{if(cur_a)cur_a.pause()}catch(e){}
+var ss=window.speechSynthesis,v=pv();
+if(!ss||!v||!window.SpeechSynthesisUtterance){aud(l,slow,0);return}
+try{ss.cancel();
+setTimeout(function(){var ok=false;l.forEach(function(t,i){var u=new SpeechSynthesisUtterance(t);u.lang="pl-PL";u.voice=v;u.rate=slow?0.5:0.8;u.onstart=function(){ok=true};u.onerror=function(){if(!ok&&i===0){ok=true;aud(l,slow,0)}};ss.speak(u)});ss.resume();
+setTimeout(function(){if(!ok&&!ss.speaking){ok=true;aud(l,slow,0)}},1500)},60)
+}catch(e){aud(l,slow,0)}}
+function say(t,slow){sayq([t],slow)}
 function grid(m){
 var al=document.getElementById("al"),ao=document.getElementById("ao"),L2=m.v.filter(function(w){return NM[w[0]]});
 al.innerHTML=L2.map(function(w,i){return '<button class="ch" data-i="'+i+'">'+w[0]+'</button>'}).join(' ');
